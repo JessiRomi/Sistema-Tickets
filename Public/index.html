@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Tickets</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Contenedor de la página principal -->
+    <div class="contenedor">
+        <div class="tabs">
+            <!-- Botón para abrir la pestaña principal -->
+            <button class="tab-button" onclick="openTab('mainTab')">Principal</button>
+
+            <!-- Botón para abrir la pestaña del llamador -->
+            <button class="tab-button" onclick="openTab('deskTab')">Llamador</button>
+
+            <!-- Botón para abrir la pestaña de los tickets que están en cola -->
+            <button class="tab-button" onclick="openTab('queueTab')">En Espera</button>
+        </div>
+
+            <!--Pestaña principal -->
+       
+        <div id="mainTab" class="tab-content">
+            <!-- Botón para solicitar un nuevo ticket -->
+            <button id="solicitarButton">Solicitar Ticket</button>
+            <div class="display">
+                <p class="turno" id="Numero-ticket">Turno</p>
+            </div>
+        </div>
+
+             <!--Pestaña del Llamador -->
+
+        <div id="deskTab" class="tab-content" >
+            <button id="Ticket-Siguiente">Atender Siguiente Ticket</button>
+            <p id="Ticketactual"></p>
+        </div>
+
+            <!--Ticket en Espera -->
+        <div id="queueTab" class="tab-content">
+            <ul id="ticket1"></ul>
+        </div>
+    </div>
+    <audio id="ticketSonido" src="Audio/ding-47489.mp3"></audio> 
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
+
